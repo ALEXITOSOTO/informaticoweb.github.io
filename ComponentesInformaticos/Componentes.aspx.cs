@@ -25,8 +25,9 @@ namespace ComponentesInformaticos
                 //Cargar los datos del form
                 cargarDatosMarca();
                 cargarDatosColor();
+                consultarComponentesBDD();
                 //Llamar el metodo de consultarComponentesBDD
-                
+
             }
         }
         public void cargarDatosMarca()
@@ -68,6 +69,7 @@ namespace ComponentesInformaticos
             insertarComponenteBDD(nombre, marca, disponibilidad, color, precio);
  
             limpiarCajas();//Llamar al metodo limpiar campos
+            consultarComponentesBDD();
         }
         public void insertarComponenteBDD(string nombre,string marca, string disponibilidad, string color, float precio)
         {
@@ -99,6 +101,31 @@ namespace ComponentesInformaticos
             txt_nombre_comp.Text = "";
             txt_disponibilidad_comp.Text = "";
             txt_precio_comp.Text = "";
+        }
+        public void consultarComponentesBDD()
+        {
+            SqlCommand comandoConsulta = new SqlCommand("sp_consultar_componentes", conexion); //2 parametros, el 1ro es el store procedure y el otro es la conexion de la bdd
+            comandoConsulta.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                this.conexion.Open(); //Abrir conexion
+                SqlDataAdapter adaptadorGeneros = new SqlDataAdapter(comandoConsulta); //Intermediario de sql a csharp
+                DataTable tablaDatos = new DataTable();
+                adaptadorGeneros.Fill(tablaDatos);
+                grid_componentes.DataSource = tablaDatos;
+                grid_componentes.DataBind();
+                this.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR: " + ex.Message);
+            }
+        }
+        //Hacer que los textbox guarden en MAYUSCULAS el contenido en la base de datos
+        protected void txt_nombre_comp_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            textBox.Text = textBox.Text.ToUpper();
         }
     }
 }
