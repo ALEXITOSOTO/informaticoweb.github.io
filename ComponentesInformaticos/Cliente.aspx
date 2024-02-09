@@ -8,10 +8,10 @@
 <asp:TextBox ID="txt_ci_cli" runat="server" ReadOnly="False" CssClass="form-control" TextMode="Number"></asp:TextBox>
 <br />
 <asp:Label ID="lbl_nombre_cli" runat="server" Text="Nombre"></asp:Label>
-<asp:TextBox ID="txt_nombre_cli" runat="server" CssClass="form-control"></asp:TextBox>
+<asp:TextBox ID="txt_nombre_cli" runat="server" CssClass="form-control" OnTextChanged="txt_nombre_cli_TextChanged"></asp:TextBox>
 <br />
 <asp:Label ID="lbl_apellido_cli" runat="server" Text="Apellido"></asp:Label>
-<asp:TextBox ID="txt_apellido_cli" runat="server" CssClass="form-control"></asp:TextBox>
+<asp:TextBox ID="txt_apellido_cli" runat="server" CssClass="form-control" OnTextChanged="txt_apellido_cli_TextChanged"></asp:TextBox>
 <br />
 <asp:Label ID="lbl_sexo_cli" runat="server" Text="Sexo"></asp:Label>
 <asp:DropDownList ID="slt_sexo_cli" runat="server" CssClass="form-control"></asp:DropDownList>  

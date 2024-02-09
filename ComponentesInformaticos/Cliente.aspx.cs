@@ -107,5 +107,17 @@ namespace ComponentesInformaticos
             limpiarCajas();//Llamar al metodo limpiar campos
             consultarClientesBDD();
         }
+        //Poner en mayusuclas en la bdd cuando ingresen en minusxulas 
+        protected void txt_nombre_cli_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            textBox.Text = textBox.Text.ToUpper();
+        }
+        //Poner en mayusuclas en la bdd cuando ingresen en minusxulas 
+        protected void txt_apellido_cli_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            textBox.Text = textBox.Text.ToUpper();
+        }
     }
 }
