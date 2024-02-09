@@ -50,9 +50,9 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Cliente">Cliente</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Componentes">Ingresar Componentes</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Ventas">Vendidos</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,7 +62,14 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; Hecho por Soto Segovia Luis Alexander & Suntaxi Puente Leandro Xavier</p>
+                <div class="row" style="background-color: black; color: white; text-align: center;" >
+                    <div class="col-md-6" >
+                        <p>&copy; Hecho por Soto Segovia Luis Alexander & Suntaxi Puente Leandro Xavier</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Estudio complexivo de los sistemas de informacion</p>
+                    </div>
+                </div>
             </footer>
         </div>
     </form>
